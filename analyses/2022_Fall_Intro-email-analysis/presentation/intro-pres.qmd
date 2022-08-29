@@ -1,0 +1,53 @@
+---
+title: Who is here?
+format:
+  revealjs: 
+    slide-number: false
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    theme: dark
+    css: styles.css
+execute:
+    echo: false
+------
+
+
+## We have a wide range of students!
+<br/>
+
+::: columns
+::: {.column width="25%"}
+::: {.incremental}
+- There are 49 students in the class
+- A few didn't email
+:::
+::: {.column width='75%'}
+```{r}
+# set-up
+setwd('./analyses/2022_Fall_Intro-email-analysis/')
+st_roster = readRDS("./data/2022_Fall_intro-resp.rds")
+library(ggplot2)
+
+no_resp = sum(is.na(st_roster$Major))
+resp = sum(!(is.na(st_roster$Major)))
+
+
+ggplot() +
+    geom_bar(aes(x = c('No Response', 'Response'),
+                 y = c(no_resp, resp),
+                 fill = c('A', 'B')),
+             stat = 'identity') +
+    labs(x = "", y = "Num. of Students")+
+    scale_y_continuous(expand = c(0,0))+
+    scale_fill_manual(values = c('grey','black'))+
+    theme_bw()+
+    theme(legend.position = 'none',
+          axis.title = element_text(face = 'bold', size = 15),
+          axis.text.x = element_text(face = 'bold', size = 12))
+
+```
+:::
+:::
+
+## What Majors do we have?
