@@ -1,0 +1,10 @@
+---
+title: Drosophila & Evolution
+listing:
+    contents: DE-posts
+    type: default
+    categories: true
+    sort-ui: false
+    filter-ui: false
+page-layout: full
+---

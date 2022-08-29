@@ -1,0 +1,26 @@
+---
+title: Meaning of Fitness
+author: Alex Barth
+categories: [DE, weekly-labs]
+---
+
+Often times, when hearing of evolution in popular media, we hear the phrase ![*"Survival of the Fittest"*.](https://www.youtube.com/watch?v=Dz5VzLz67WA&ab_channel=UPROXXVideo). This phrase, while not inherently false, doesn't provide a great indication of what evolution actually is. In fact, the phrase "Survival of the Fittest" can be misleading to how evolution actually works. Fundamentally, evolution is driven by the perpetuation of alleles over multiple generations. The *fitness* of a particular trait indicates how likely it will produce successful (surviving and reproductive) offspring. \n
+The first misconception from the phrase *survival of the fittest* is that fitness does not always equal survival. If an organism can produce many offspring quickly before it dies, this could increase it's *fitness*. Additionally a trait which promotes long survival might not be inheritable.\n
+The second issue with *survival of the fittest* is that the phrase implies evolution is goal-oriented or directional towards an ideal. This is not the case. Evolution is agnostic. Often a trait that is beneficial in one generation may not be beneficial, or even detrimental, for subsequent generations in future conditions. Additionally just because a trait is persists, it may not even be ideal, just better than the alternative traits for that population.
+
+\n\n\n
+
+{{< pagebreak >}}
+
+Here are two short reads about the phrase *survival of the fittest*
+:::{.web-link}
+<iframe src="https://www.nature.com/scitable/blog/accumulating-glitches/the_meaning_of_fitness/" title="Fitness Comments">
+    <p>Error Loading iframe: Check your browser</p>
+</iframe>
+:::
+
+:::{.web-link}
+<iframe src="../media/Sci-american-misunderstanding-darwin.pdf" title="Misunderstanding Darwin">
+    <p>Error Loading iframe: Check your browser</p>
+<iframe>
+:::
