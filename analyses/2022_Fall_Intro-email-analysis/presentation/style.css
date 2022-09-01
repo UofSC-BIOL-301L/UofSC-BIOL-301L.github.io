@@ -8,8 +8,3 @@ header h1{
 .border-thick {
   border-width: 3px;
 }
-
-.reveal .footer {
-    font-size: 0.45em !important;
-    text-align: right !important;
-}

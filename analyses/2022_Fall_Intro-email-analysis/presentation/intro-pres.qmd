@@ -6,27 +6,19 @@ format:
     chalkboard: 
       buttons: false
     preview-links: auto
-    theme: dark
+    theme: simple
     css: styles.css
 execute:
     echo: false
-------
-
+---
 
 ## We have a wide range of students!
-<br/>
+We have 49 students
 
-::: columns
-::: {.column width="25%"}
-::: {.incremental}
-- There are 49 students in the class
-- A few didn't email
-:::
-::: {.column width='75%'}
+::: {.fragment}
 ```{r}
 # set-up
-setwd('./analyses/2022_Fall_Intro-email-analysis/')
-st_roster = readRDS("./data/2022_Fall_intro-resp.rds")
+st_roster = readRDS("../data/2022_Fall_intro-resp.rds")
 library(ggplot2)
 
 no_resp = sum(is.na(st_roster$Major))
@@ -35,19 +27,96 @@ resp = sum(!(is.na(st_roster$Major)))
 
 ggplot() +
     geom_bar(aes(x = c('No Response', 'Response'),
-                 y = c(no_resp, resp),
-                 fill = c('A', 'B')),
-             stat = 'identity') +
+                y = c(no_resp, resp),
+                fill = c('A', 'B')),
+            stat = 'identity') +
     labs(x = "", y = "Num. of Students")+
     scale_y_continuous(expand = c(0,0))+
     scale_fill_manual(values = c('grey','black'))+
     theme_bw()+
     theme(legend.position = 'none',
           axis.title = element_text(face = 'bold', size = 15),
-          axis.text.x = element_text(face = 'bold', size = 12))
+          axis.text.x = element_text(face = 'bold', size = 12,
+                                    colour = 'black'),
+          plot.background = element_rect(fill = 'transparent'),
+          panel.background = element_rect(fill = 'transparent'))
 
 ```
 :::
-:::
 
 ## What Majors do we have?
+
+::: {.fragment}
+```{r}
+library(waffle)
+resp <- st_roster[which(!is.na(st_roster$Major)),]
+majors <- as.data.frame(table(resp$Major))
+ggplot(majors, aes(fill = Var1,
+                   values = Freq))+
+  geom_waffle(n_rows = 3)+
+  coord_equal()+
+  theme_void()+
+  labs(fill = "")+
+  theme(legend.text = element_text(size = 15))
+```
+:::
+
+## What year are we?
+
+::: {.fragment}
+```{r}
+year <- as.data.frame(table(resp$Year))
+ggplot(year, aes(fill = Var1,
+                   values = Freq))+
+  geom_waffle(n_rows = 3)+
+  coord_equal()+
+  theme_void()+
+  labs(fill = "")+
+  theme(legend.text = element_text(size = 15))
+```
+:::
+
+## What's in your future?
+
+::: {.fragment}
+```{r}
+fut <- as.data.frame(table(resp$Future))
+ggplot(fut, aes(fill = Var1,
+                   values = Freq))+
+  geom_waffle(n_rows = 3)+
+  coord_equal()+
+  theme_void()+
+  labs(fill = "")+
+  theme(legend.text = element_text(size = 15))
+```
+:::
+
+## What's exciting?
+
+::: {.fragment}
+```{r}
+ex <- as.data.frame(table(resp$Excited))
+ggplot(ex, aes(fill = Var1,
+                   values = Freq))+
+  geom_waffle(n_rows = 3)+
+  coord_equal()+
+  theme_void()+
+  labs(fill = "")+
+  theme(legend.text = element_text(size = 15))
+```
+:::
+
+## What's concerning?
+
+::: {.fragment}
+```{r}
+conc <- as.data.frame(table(resp$Concerned))
+ggplot(conc, aes(fill = Var1,
+                   values = Freq))+
+  geom_waffle(n_rows = 3)+
+  coord_equal()+
+  theme_void()+
+  labs(fill = "")+
+  theme(legend.text = element_text(size = 15))
+```
+:::
